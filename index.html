@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABO1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////l9Pff8fS54ein2eOn2eL9/v684unr9vj7/f7c8PSl2eKHzNil2OLv+Prz+vue1eB3xdOq2uPm9Pf29/vy8/n3/Py13+eEyteZ097P6u/2+/zByeKOm8r8/f7u+Pq+4+qOz9uU0dzo9fjb4O5meLbh5fH0+vvV7fHx+fv8/P2Gk8Wbps+44eim2eLW2+xkdrXO1Oit3OWttthperja3u7u+Pn6+/2hrNJneLfFy+P7+/23v92IlcbN0ufx8/nj5/Kbp9BsfbltfrqAj8ORnsvg5PD+/v/v8ffQ1em0vduqtNfn6vS/61TcAAAAHHRSTlMAAAQqbK3Z8v0DN5ff+xqJ6jbC/kHBAjjp3qz8qSKHsgAAAAFiS0dEAf8CLd4AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfiChMPAx5FOtlkAAABSUlEQVQ4y4WTZ2OCMBCGc4IMEXAPjB10771t7dLuXbv3/v+/oNigIYjN+4HcJU9CcgMhVxASxLAkK4oshUUhBIgVqBEtqmNXelSLqF4EwDBjmFHMNADoejyRxD4lE/EGAZCScICkFCGc/YHrDkHOACON2yhtOABkTNxWZgYQZHPeqWKH18tlAakas6ezi3E1FQl5Fuhm3LyARD0AsIs9vSSmIrJwC9DXPzA4NEx8C0ktwMjo2PiE3YgFkokxOdUEpmdm5+YXXEBGCjEWl5bpHVZKq2tlMq+gAjHWNza9r9jarpD5QuMX1Z3dv3Fvn72T3LzkweFRfSgd+xJGn3lyeuZ8K+csYNFAXVzWrqr+bDmBoqG+vqnd3t3bDOCE2push8en55fXNzZZTLrfPz6/vn+oX083t2C4JccvWm7Z8xuH33r85v2v/X8Bp/FiyVLnL/0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMTAtMTlUMTU6MDM6MzArMDI6MDCzEaEaAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTEwLTE5VDE1OjAzOjMwKzAyOjAwwkwZpgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Primary Meta Tags -->
+  <title>Product preview card component</title>
+  <meta name="title" content="Product preview card component">
+  <meta name="description" content="Frontend mentor challenge solution for: Product preview card component">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://john-mirage.github.io/product-preview-card-component/">
+  <meta property="og:title" content="Product preview card component">
+  <meta property="og:description" content="Frontend mentor challenge solution for: Product preview card component">
+  <meta property="og:image" content="https://john-mirage.github.io/product-preview-card-component/preview.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://john-mirage.github.io/product-preview-card-component/">
+  <meta property="twitter:title" content="Product preview card component">
+  <meta property="twitter:description" content="Frontend mentor challenge solution for: Product preview card component">
+  <meta property="twitter:image" content="https://john-mirage.github.io/product-preview-card-component/preview.jpg">
+  <script type="module" crossorigin src="/product-preview-card-component/assets/index.6bf5d33c.js"></script>
+  <link rel="stylesheet" href="/product-preview-card-component/assets/index.f9b49981.css">
+</head>
+
+<body class="flex justify-center items-center w-full min-h-screen px-16 py-28 bg-cream lg:px-32 lg:py-56">
+  <!-- Card -->
+  <main class="w-full h-auto max-w-343 rounded-10 bg-white overflow-hidden shadow-lg lg:max-w-600 lg:flex lg:flex-row lg:items-stretch" x-data="{ lightboxOpen: false, inTheCart: false }" x-effect="document.documentElement.style.overflow = lightboxOpen ? 'hidden' : 'auto'">
+    <h1 class="sr-only">Product preview card component</h1>
+    <!-- Card image -->
+    <div class="relative cursor-pointer group lg:w-1/2 focus-visible:outline-none" tabindex="0" @click="lightboxOpen = true" @keyup.enter="lightboxOpen = true">
+      <picture class="block w-full h-auto lg:relative lg:h-full">
+        <source srcset="/product-preview-card-component/assets/image-product-desktop.46292547.jpg " media="(min-width: 664px)">
+        <img class=" w-full h-auto lg:absolute lg:z-10 lg:top-0 lg:left-0 lg:h-full lg:object-cover lg:object-center" draggable="false" src="/product-preview-card-component/assets/image-product-mobile.1140e112.jpg" alt="Channel number 5" />
+      </picture>
+      <div class="absolute z-20 top-0 left-0 flex justify-center items-center w-full h-full bg-dark-cyan/60 invisible opacity-0 transition-image duration-300 group-hover:opacity-100 group-hover:visible group-focus-visible:opacity-100 group-focus-visible:visible">
+        <svg class="h-32 w-32 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+          <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+    <!-- Lightbox -->
+    <template x-teleport="body">
+      <aside class="fixed z-50 top-0 left-0 flex justify-center items-center w-full min-h-screen px-16" x-show="lightboxOpen" x-transition.opacity.duration.300ms>
+        <div class="absolute z-0 top-0 left-0 w-full h-full bg-very-dark-blue/80" @click="lightboxOpen = false"></div>
+        <div class="relative z-50 w-full max-h-95vh max-w-600 overflow-y-auto">
+          <img class="w-full h-auto rounded-8" draggable="false" src="/product-preview-card-component/assets/image-product-desktop.46292547.jpg" alt="Channel number 5" />
+          <button class="absolute top-16 right-16 flex flex-row justify-center items-center min-h-40 w-40 rounded-8 transition-colors duration-150 text-white bg-dark-cyan hover:bg-very-dark-cyan overflow-hidden focus-visible:bg-very-dark-cyan focus-visible:outline-none sm:w-auto sm:px-16" @click="lightboxOpen = false" aria-label="close lightbox">
+            <svg class="w-20 h-20 sm:mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <span class="hidden sm:block sm:font-sans sm:text-button sm:font-700">Close</span>
+          </button>
+        </div>
+      </aside>
+    </template>
+    <!-- Card body -->
+    <div class="p-24 lg:w-1/2 lg:p-32">
+      <p class="mb-12 font-sans text-h13 font-500 text-dark-grayish-blue uppercase">perfume</p>
+      <h2 class="mb-16 font-serif text-h32 font-700 text-very-dark-blue lg:mb-24">Gabrielle Essence Eau De Parfum</h2>
+      <p class="mb-40 font-sans text-b13 font-500 text-dark-grayish-blue lg:mb-24 lg:text-b14">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+      <div class="mb-20 flex flex-row flex-wrap items-center lg:mb-32">
+        <p class="mr-24 font-serif text-h32 font-700 text-dark-cyan">$149.99</p>
+        <p class="font-sans text-b13 font-500 text-dark-grayish-blue line-through">$169.99</p>
+      </div>
+      <button class="min-h-48 rounded-8 transition-colors duration-150 text-white bg-dark-cyan hover:bg-very-dark-cyan overflow-hidden focus-visible:bg-very-dark-cyan focus-visible:outline-none" @click="inTheCart = !inTheCart" :aria-label="inTheCart ? 'remove item from the cart' : 'add item to the cart'">
+        <span class="flex flex-row items-stretch w-full transition-transform duration-300 ease-out" :class="inTheCart && '-translate-x-full'">
+          <span class="flex-none flex flex-col justify-center items-center w-full px-16 py-8 xs:flex-row">
+            <svg class="w-18 h-18 mb-8 xs:mb-0 xs:mr-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16">
+              <path fill="#FFF" d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" />
+            </svg>
+            <span class="font-sans text-button font-700">Add to Cart</span>
+          </span>
+          <span class="flex-none flex flex-col justify-center items-center w-full px-16 py-8 xs:flex-row">
+            <svg class="w-24 h-24 mb-8 xs:mb-0 xs:mr-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-sans text-button font-700">Added to cart</span>
+          </span>
+        </span>
+      </button>
+    </div>
+  </main>
+  <!-- Module -->
+  
+</body>
+
+</html>
