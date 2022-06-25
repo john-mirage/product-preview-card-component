@@ -86,6 +86,12 @@ module.exports = {
         "343": "21.4375rem",
         "600": "37.5rem",
       },
+      maxHeight: {
+        "95vh": "95vh",
+      },
+      transitionProperty: {
+        "image": "opacity, visibility",
+      }
     },
   },
   plugins: [],
