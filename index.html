@@ -52,11 +52,11 @@
         <div class="absolute z-0 top-0 left-0 w-full h-full bg-very-dark-blue/80" @click="lightboxOpen = false"></div>
         <div class="relative z-50 w-full max-h-95vh max-w-600 overflow-y-auto">
           <img class="w-full h-auto rounded-8" draggable="false" src="/src/images/image-product-desktop.jpg" alt="Channel number 5" />
-          <button class="absolute top-16 right-16 flex flex-row justify-center items-center min-h-40 w-40 rounded-8 transition-colors duration-150 text-white bg-dark-cyan hover:bg-very-dark-cyan overflow-hidden focus-visible:bg-very-dark-cyan focus-visible:outline-none xs:w-auto xs:px-16" @click="lightboxOpen = false">
-            <svg class="w-20 h-20 xs:mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <button class="absolute top-16 right-16 flex flex-row justify-center items-center min-h-40 w-40 rounded-8 transition-colors duration-150 text-white bg-dark-cyan hover:bg-very-dark-cyan overflow-hidden focus-visible:bg-very-dark-cyan focus-visible:outline-none sm:w-auto sm:px-16" @click="lightboxOpen = false" aria-label="close lightbox">
+            <svg class="w-20 h-20 sm:mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
-            <span class="hidden xs:block xs:font-sans xs:text-button xs:font-700">Close</span>
+            <span class="hidden sm:block sm:font-sans sm:text-button sm:font-700">Close</span>
           </button>
         </div>
       </aside>
