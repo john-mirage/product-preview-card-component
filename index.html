@@ -7,9 +7,7 @@
   <link rel="icon" type="image/png" href="/src/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
   <!-- Primary Meta Tags -->
   <title>Product preview card component</title>
@@ -33,10 +31,10 @@
 
 <body class="flex justify-center items-center w-full min-h-screen px-16 py-28 bg-cream lg:px-32 lg:py-56">
   <!-- Card -->
-  <main class="w-full h-auto max-w-343 rounded-10 bg-white overflow-hidden shadow-lg lg:max-w-600 lg:flex lg:flex-row lg:items-stretch" x-data="{ open: false }" x-effect="document.documentElement.style.overflow = open ? 'hidden' : 'auto'">
+  <main class="w-full h-auto max-w-343 rounded-10 bg-white overflow-hidden shadow-lg lg:max-w-600 lg:flex lg:flex-row lg:items-stretch" x-data="{ lightboxOpen: false }" x-effect="document.documentElement.style.overflow = lightboxOpen ? 'hidden' : 'auto'">
     <h1 class="sr-only">Product preview card component</h1>
     <!-- Card image -->
-    <div class="relative cursor-pointer group lg:w-1/2" @click="open = true">
+    <div class="relative cursor-pointer group lg:w-1/2" @click="lightboxOpen = true">
       <picture class="block w-full h-auto lg:relative lg:h-full">
         <source srcset="/src/images/image-product-desktop.jpg" media="(min-width: 664px)">
         <img class=" w-full h-auto lg:absolute lg:z-10 lg:top-0 lg:left-0 lg:h-full lg:object-cover lg:object-center" draggable="false" src="/src/images/image-product-mobile.jpg" alt="Channel number 5" />
@@ -50,11 +48,11 @@
     </div>
     <!-- Lightbox -->
     <template x-teleport="body">
-      <aside class="fixed z-50 top-0 left-0 flex justify-center items-center w-full min-h-screen px-16" x-show="open" x-transition.opacity.duration.300ms>
-        <div class="absolute z-0 top-0 left-0 w-full h-full bg-very-dark-blue/80" @click="open = false"></div>
+      <aside class="fixed z-50 top-0 left-0 flex justify-center items-center w-full min-h-screen px-16" x-show="lightboxOpen" x-transition.opacity.duration.300ms>
+        <div class="absolute z-0 top-0 left-0 w-full h-full bg-very-dark-blue/80" @click="lightboxOpen = false"></div>
         <div class="relative z-50 w-full max-h-95vh max-w-600 overflow-y-auto">
           <img class="w-full h-auto" draggable="false" src="/src/images/image-product-desktop.jpg" alt="Channel number 5" />
-          <button class="absolute top-16 right-16 text-white cursor-pointer" @click="open = false" aria-label="close lightbox">
+          <button class="absolute top-16 right-16 text-white cursor-pointer" @click="lightboxOpen = false" aria-label="close lightbox">
             <svg class="h-32 w-32" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -71,11 +69,21 @@
         <p class="mr-24 font-serif text-h32 font-700 text-dark-cyan">$149.99</p>
         <p class="font-sans text-b13 font-500 text-dark-grayish-blue line-through">$169.99</p>
       </div>
-      <button class="flex flex-row justify-center items-center w-full min-h-48 px-16 rounded-8 transition-colors duration-150 bg-dark-cyan hover:bg-very-dark-cyan">
-        <svg class="w-18 h-18 mr-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16">
-          <path fill="#FFF" d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" />
-        </svg>
-        <span class="font-sans text-button font-700 text-white">Add to Cart</span>
+      <button class="min-h-48 rounded-8 transition-colors duration-150 text-white bg-dark-cyan hover:bg-very-dark-cyan overflow-hidden" x-data="{inTheCart: false}" @click="inTheCart = !inTheCart">
+        <span class="flex flex-row items-stretch w-full transition-transform duration-300" :class="inTheCart && '-translate-x-full'">
+          <span class="flex-none flex flex-row justify-center items-center w-full px-16">
+            <svg class="w-18 h-18 mr-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16">
+              <path fill="#FFF" d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" />
+            </svg>
+            <span class="font-sans text-button font-700">Add to Cart</span>
+          </span>
+          <span class="flex-none flex flex-row justify-center items-center w-full px-16">
+            <svg class="w-24 h-24 mr-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-sans text-button font-700">Added to the cart</span>
+          </span>
+        </span>
       </button>
     </div>
   </main>
